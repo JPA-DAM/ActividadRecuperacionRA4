@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventosAnuales {
+    public static final int INT = 60;
     private int eventosAlAnno;
     private List<Evento> eventos = new ArrayList<>();
 
@@ -33,7 +34,7 @@ public class EventosAnuales {
     public List<Evento> getEventosMasUnaHora() {
         List<Evento> eventosMasUnaHora = new ArrayList<>();
         for (Evento evento : eventos)
-            if (evento.getDuracionEvento() > 60)
+            if (evento.getDuracionEvento() > INT)
                 eventosMasUnaHora.add(evento);
         return eventosMasUnaHora;
     }
