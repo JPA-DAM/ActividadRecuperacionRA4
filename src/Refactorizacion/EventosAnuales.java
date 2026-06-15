@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventosAnuales {
-    private int annoEventos;
+    private int eventosAlAnno;
     private List<Evento> eventos = new ArrayList<>();
 
-    public EventosAnuales(int annoEventos) {
-        this.annoEventos = annoEventos;
+    public EventosAnuales(int eventosAlAnno) {
+        this.eventosAlAnno = eventosAlAnno;
     }
     public void addEvento (Evento evento) {
         eventos.add(evento);
@@ -24,7 +24,7 @@ public class EventosAnuales {
         if (eventos.isEmpty() || eventos == null)
             return null;
         Evento eventoMasReciente = new Evento(null, 0, TipoEvento.CARRERA,
-                LocalDate.of(annoEventos - 1, 1, 1));
+                LocalDate.of(eventosAlAnno - 1, 1, 1));
         for (Evento evento : eventos)
             if (evento.getFechaEvento().isAfter(eventoMasReciente.getFechaEvento()))
                 eventoMasReciente = evento;
