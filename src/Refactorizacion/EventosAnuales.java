@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventosAnuales {
+public class EventosAnuales implements Anuales {
     public static final int INT = 60;
     public static final int INT1 = 1;
     public static final int MONTH = 1;
@@ -25,13 +25,8 @@ public class EventosAnuales {
         return extracted(duracionTotal);
     }
 
-    private int extracted(int duracionTotal) {
-        for (Evento evento : eventos)
-            duracionTotal += evento.getDuracionEvento();
-        return duracionTotal;
-    }
-
-    public Evento getEventoMasReciente () {
+    @Override
+    public Evento getEventoMasReciente() {
         if (eventos.isEmpty() || eventos == null)
             return null;
         Evento eventoMasReciente = new Evento(null, 0, TipoEvento.CARRERA,
@@ -41,6 +36,7 @@ public class EventosAnuales {
                 eventoMasReciente = evento;
         return eventoMasReciente;
     }
+    @Override
     public List<Evento> getEventosMasUnaHora() {
         List<Evento> eventosMasUnaHora = new ArrayList<>();
         for (Evento evento : eventos)
