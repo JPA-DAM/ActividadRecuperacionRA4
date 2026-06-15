@@ -79,7 +79,6 @@ public class ArraysUtils {
             if (array[i] == array[i - 1])
                 duplicates++;
             else{
-                // System.out.println(array[i]);
                 arrayWD[i - duplicates] = array[i];
             }
         }
@@ -93,15 +92,6 @@ public class ArraysUtils {
      * @return
      */
     public static int[] rotatePositionsInArrays (int[] array, int position){
-       /*if (array == null)
-           return null;
-        if (position < 0)
-            return array;
-        int[] newArray = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-                newArray[(i + position) % array.length] = array[i];
-        }
-        return newArray;*/
 
         if (array == null || array.length == 0) return array;
 
@@ -127,17 +117,4 @@ public class ArraysUtils {
 
         return newArray;
     }
-    /*public static void main(String[] args) {
-        int[] array = {9,9,9,9,9,-9,10, 1, 2, 3, 4, 5, 6, -1, 1, -1};
-        System.out.println(Arrays.toString(array));
-        int[] newArray = rotatePositionsInArrays(array, 2);
-        System.out.println(Arrays.toString(newArray));
-        int sum = sumItemsOfArray(array);
-        System.out.printf("La suma de los valores del array vale %d%n", sum);
-        int[] values = getMinimumMaximumOfArray(array);
-        System.out.printf("Valor mas chico es %d y el más grande %d%n", values[0], values[1]);
-        int[] arrayWD = getArrayWithoutDuplicates(array);
-        System.out.println(Arrays.toString(array));
-        System.out.println(Arrays.toString(arrayWD));
-    }*/
 }
