@@ -20,7 +20,8 @@ public class EventosAnuales {
         eventos.add(evento);
     }
     public int getTiempoTotal() {
-        int duracionTotal = 0;
+        int i = 0;
+        int duracionTotal = i;
         for (Evento evento : eventos)
             duracionTotal += evento.getDuracionEvento();
         return duracionTotal;
