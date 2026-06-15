@@ -6,6 +6,9 @@ import java.util.List;
 
 public class EventosAnuales {
     public static final int INT = 60;
+    public static final int INT1 = 1;
+    public static final int MONTH = 1;
+    public static final int DAY_OF_MONTH = 1;
     private int eventosAlAnno;
     private List<Evento> eventos = new ArrayList<>();
 
@@ -25,7 +28,7 @@ public class EventosAnuales {
         if (eventos.isEmpty() || eventos == null)
             return null;
         Evento eventoMasReciente = new Evento(null, 0, TipoEvento.CARRERA,
-                LocalDate.of(eventosAlAnno - 1, 1, 1));
+                LocalDate.of(eventosAlAnno - INT1, MONTH, DAY_OF_MONTH));
         for (Evento evento : eventos)
             if (evento.getFechaEvento().isAfter(eventoMasReciente.getFechaEvento()))
                 eventoMasReciente = evento;
