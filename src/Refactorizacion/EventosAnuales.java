@@ -14,7 +14,7 @@ public class EventosAnuales {
 
     public EventosAnuales(int eventosAlAnno) {
         int eventosAlAnno1 = eventosAlAnno;
-        this.eventosAlAnno = eventosAlAnno1;
+        this.setEventosAlAnno(eventosAlAnno1);
     }
     public void addEvento (Evento evento) {
         eventos.add(evento);
@@ -35,7 +35,7 @@ public class EventosAnuales {
         if (eventos.isEmpty() || eventos == null)
             return null;
         Evento eventoMasReciente = new Evento(null, 0, TipoEvento.CARRERA,
-                LocalDate.of(eventosAlAnno - INT1, MONTH, DAY_OF_MONTH));
+                LocalDate.of(getEventosAlAnno() - INT1, MONTH, DAY_OF_MONTH));
         for (Evento evento : eventos)
             if (evento.getFechaEvento().isAfter(eventoMasReciente.getFechaEvento()))
                 eventoMasReciente = evento;
@@ -75,4 +75,11 @@ public class EventosAnuales {
         return eventosPorFecha;
     }
 
+    public int getEventosAlAnno() {
+        return eventosAlAnno;
+    }
+
+    public void setEventosAlAnno(int eventosAlAnno) {
+        this.eventosAlAnno = eventosAlAnno;
+    }
 }
