@@ -13,7 +13,8 @@ public class EventosAnuales {
     private List<Evento> eventos = new ArrayList<>();
 
     public EventosAnuales(int eventosAlAnno) {
-        this.eventosAlAnno = eventosAlAnno;
+        int eventosAlAnno1 = eventosAlAnno;
+        this.eventosAlAnno = eventosAlAnno1;
     }
     public void addEvento (Evento evento) {
         eventos.add(evento);
@@ -67,6 +68,5 @@ public class EventosAnuales {
                 eventosPorFecha.add(evento);
         return eventosPorFecha;
     }
-
 
 }
