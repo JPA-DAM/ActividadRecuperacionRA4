@@ -19,7 +19,7 @@ public class EventosAnuales {
     public void addEvento (Evento evento) {
         eventos.add(evento);
     }
-    public int getTiempoTotal() {
+    public int getTotalDelTiempo() {
         int i = 0;
         int duracionTotal = i;
         return extracted(duracionTotal);
