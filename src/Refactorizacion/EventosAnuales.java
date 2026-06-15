@@ -37,7 +37,7 @@ public class EventosAnuales {
                 eventosMasUnaHora.add(evento);
         return eventosMasUnaHora;
     }
-    public String[] observacionDeEvento (String nombreEvento) {
+    public String[] ObservacionEventos(String nombreEvento) {
         String[] observacionesArray = null;
         for (Evento evento : eventos) {
             if (evento.getNombreEvento().equalsIgnoreCase(nombreEvento)) {
