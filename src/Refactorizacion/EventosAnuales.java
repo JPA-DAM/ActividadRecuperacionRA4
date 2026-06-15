@@ -22,10 +22,15 @@ public class EventosAnuales {
     public int getTiempoTotal() {
         int i = 0;
         int duracionTotal = i;
+        return extracted(duracionTotal);
+    }
+
+    private int extracted(int duracionTotal) {
         for (Evento evento : eventos)
             duracionTotal += evento.getDuracionEvento();
         return duracionTotal;
     }
+
     public Evento getEventoMasReciente () {
         if (eventos.isEmpty() || eventos == null)
             return null;
