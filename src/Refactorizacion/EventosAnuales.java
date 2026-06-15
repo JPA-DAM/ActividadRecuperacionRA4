@@ -4,46 +4,19 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventosAnuales implements Anuales {
-    public static final int INT = 60;
-    public static final int INT1 = 1;
-    public static final int MONTH = 1;
-    public static final int DAY_OF_MONTH = 1;
-    private int eventosAlAnno;
-    private List<Evento> eventos = new ArrayList<>();
+public class EventosAnuales extends EventosAnuales2 {
 
     public EventosAnuales(int eventosAlAnno) {
         int eventosAlAnno1 = eventosAlAnno;
         this.setEventosAlAnno(eventosAlAnno1);
     }
-    public void addEvento (Evento evento) {
-        eventos.add(evento);
-    }
+
     public int getTotalDelTiempo() {
         int i = 0;
         int duracionTotal = i;
         return extracted(duracionTotal);
     }
 
-    @Override
-    public Evento getEventoMasReciente() {
-        if (eventos.isEmpty() || eventos == null)
-            return null;
-        Evento eventoMasReciente = new Evento(null, 0, TipoEvento.CARRERA,
-                LocalDate.of(getEventosAlAnno() - INT1, MONTH, DAY_OF_MONTH));
-        for (Evento evento : eventos)
-            if (evento.getFechaEvento().isAfter(eventoMasReciente.getFechaEvento()))
-                eventoMasReciente = evento;
-        return eventoMasReciente;
-    }
-    @Override
-    public List<Evento> getEventosMasUnaHora() {
-        List<Evento> eventosMasUnaHora = new ArrayList<>();
-        for (Evento evento : eventos)
-            if (evento.getDuracionEvento() > INT)
-                eventosMasUnaHora.add(evento);
-        return eventosMasUnaHora;
-    }
     public String[] ObservacionEventos(String nombreEvento) {
         String[] observacionesArray = null;
         for (Evento evento : eventos) {
@@ -69,10 +42,6 @@ public class EventosAnuales implements Anuales {
             if (evento.getFechaEvento().equals(fechaEvento))
                 eventosPorFecha.add(evento);
         return eventosPorFecha;
-    }
-
-    public int getEventosAlAnno() {
-        return eventosAlAnno;
     }
 
     public void setEventosAlAnno(int eventosAlAnno) {
